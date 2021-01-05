@@ -18,7 +18,6 @@ public class User
     private String username;
     private String password;
     private String avatar;
-    private Integer type;
     private String email;
 
     public String getEmail() {
@@ -35,7 +34,7 @@ public class User
     private Date updateTime;
 
     @OneToMany(mappedBy = "user")
-    private List<Blog> blogs = new ArrayList<>();
+    private List<Question> questions = new ArrayList<>();
 
     public User() {
     }
@@ -80,14 +79,6 @@ public class User
         this.avatar = avatar;
     }
 
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
     public Date getCreateTime() {
         return createTime;
     }
@@ -104,27 +95,27 @@ public class User
         this.updateTime = updateTime;
     }
 
-    public List<Blog> getBlogs() {
-        return blogs;
+    public List<Question> getBlogs() {
+        return questions;
     }
 
-    public void setBlogs(List<Blog> blogs) {
-        this.blogs = blogs;
+    public void setBlogs(List<Question> questions) {
+        this.questions = questions;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
+                ", admin='" + admin + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", avatar='" + avatar + '\'' +
-                ", type=" + type +
                 ", email='" + email + '\'' +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
-                ", blogs=" + blogs +
+                ", questions=" + questions +
                 '}';
     }
 }
