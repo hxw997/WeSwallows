@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Swallows?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=CST
+    username: root
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#  messages:
+#    basename: i18n/messages
+##我看看还好不好使
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+    com.lrm: debug
+  file: log/blog.log
