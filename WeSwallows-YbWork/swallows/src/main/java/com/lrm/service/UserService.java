@@ -1,4 +1,7 @@
 package com.lrm.service;
 
-public class UserService {
+import com.lrm.po.User;
+
+public interface UserService {
+    User checkUser(String username , String password);
 }
